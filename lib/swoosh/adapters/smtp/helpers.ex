@@ -139,14 +139,10 @@ defmodule Swoosh.Adapters.SMTP.Helpers do
 
   @content_params if(gen_smtp_major >= 1,
                     do: %{
-                      content_type_params: [{"charset", "utf-8"}],
-                      disposition: "inline",
-                      disposition_params: []
+                      content_type_params: [{"charset", "utf-8"}]
                     },
                     else: [
-                      {"content-type-params", [{"charset", "utf-8"}]},
-                      {"disposition", "inline"},
-                      {"disposition-params", []}
+                      {"content-type-params", [{"charset", "utf-8"}]}
                     ]
                   )
 
